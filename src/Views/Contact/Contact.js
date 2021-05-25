@@ -119,6 +119,10 @@ const Contact = ({ navigation }) => {
                             style={styles.input}
                             onChangeText={(text) => setName(text)}
                             placeholder="Votre nom"
+                        /><TextInput
+                            style={styles.input}
+                            onChangeText={(text) => setName(text)}
+                            placeholder="Votre nom"
                         />
                     </View>
 
