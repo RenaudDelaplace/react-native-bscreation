@@ -2,7 +2,6 @@ import React from 'react'
 import { View, Image, Text, StyleSheet, FlatList } from 'react-native'
 
 import Header from '../../components/Navigation/Header'
-import BottomNavigation from '../../components/Navigation/BottomNavigation'
 import BoxInfos from '../../components/BoxInfos'
 
 const styles = StyleSheet.create({
@@ -44,8 +43,7 @@ const infos = [
 
 const Accueil = ({ navigation }) => {
     return (
-        <View style={{ flex: 1 }}>
-            <BottomNavigation navigation={navigation} route="Home" />
+        <View style={{ flex: 1, backgroundColor: "#D0D0D0" }}>
             <Header back={false} navigation={navigation} />
 
             <View>

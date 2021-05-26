@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { ScrollView, View, Text, Platform, Dimensions, TextInput, StyleSheet } from 'react-native'
+import { ScrollView, View, Text, Platform, Dimensions, TextInput, StyleSheet, Button, TouchableOpacity } from 'react-native'
 
 import Icon from 'react-native-vector-icons/Ionicons'
 import MapView, { Marker } from 'react-native-maps';
 
-import Header from '../../components/Navigation/Header';
+import Header from "../../components/Navigation/Header"
 
 const styles = StyleSheet.create({
     color: {
@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
     box: {
         padding: 15,
-        marginTop: 5,
+        marginBottom: 15,
         backgroundColor: '#3E3E3E',
         width: '100%',
         justifyContent: 'center',
@@ -26,11 +26,19 @@ const styles = StyleSheet.create({
         color: '#fff',
         marginRight: 10,
     },
-    adresseText: { 
-        color: '#ff7400', 
-        fontSize: 18, 
+    adresseText: {
+        color: '#ff7400',
+        fontSize: 18,
         fontWeight: 'bold'
-     },
+    },
+    input: {
+        borderBottomWidth: 2,
+        padding: 15,
+        fontSize: 16,
+        marginBottom: 10,
+        color: "#3E3E3E99",
+        borderBottomColor: '#3E3E3E99',
+    },
 })
 
 const Contact = ({ navigation }) => {
@@ -49,83 +57,114 @@ const Contact = ({ navigation }) => {
         longitudeDelta: 0.0421,
     }
     const markerCoordinate = {
-        latitude: 48.84346823447883, 
+        latitude: 48.84346823447883,
         longitude: 7.60743135582357,
     }
 
     return (
-        <View>
+        <View style={{backgroundColor: "#D0D0D0"}}>
             <Header back={true} backText='Nous contacter' navigation={navigation} />
-
             <View style={{ height: windowHeight }}>
                 <ScrollView>
-                    <View style={styles.box}>
-                        <Text style={styles.text}>
-                            Un renseignement ?
-                    </Text>
-                        <Text style={styles.text}>
-                            Un devis ?
-                    </Text>
-                        <Text style={styles.text}>
-                            Laissez-nous un <Text style={{ color: '#ff7400', fontSize: 22 }}>message</Text>
-                        </Text>
-                    </View>
-
-                    <View style={styles.box}>
-                        <Text style={{ color: '#ff7400', fontSize: 20 }}>Nos réseaux sociaux</Text>
-                        <View style={{ flexDirection: 'row' }}>
-                            <Icon name={`${prefix}logo-facebook`} size={40} style={styles.icon} onPress={() => console.log('press')} />
-                            <Icon name={`${prefix}logo-instagram`} size={40} style={styles.icon} onPress={() => console.log('press')} />
+                    <View style={{ flex: 1 }}>
+                        <View style={styles.box}>
+                            <Text style={styles.text}>
+                                Un renseignement ?
+                            </Text>
+                            <Text style={styles.text}>
+                                Un devis ?
+                            </Text>
+                            <Text style={styles.text}>
+                                Laissez-nous un <Text style={{ color: '#ff7400', fontSize: 22 }}>message</Text>
+                            </Text>
                         </View>
-                    </View>
 
-                    <View style={[styles.box], { backgroundColor: "#3E3E3E" }}>
-                        <MapView
-                            style={{ height: 200, width: '100%', padding: 0 }}
-                            initialRegion={{...coordinate}}
-                        >
-                            <Marker coordinate={{ ...markerCoordinate }} />
-                        </MapView>
-                    </View>
-
-                    <View style={[styles.box, {backgroundColor: "#3E3E3ECC"}]}>
-                        <View style={{ flex: 1, marginBottom: 20 }}>
-                            <Text style={[styles.adresseText, {fontSize: 18}]}>Adresse</Text>
+                        <View style={styles.box}>
+                            <Text style={{ color: '#ff7400', fontSize: 20 }}>Nos réseaux sociaux</Text>
+                            <View style={{ flexDirection: 'row' }}>
+                                <Icon name={`${prefix}logo-facebook`} size={40} style={styles.icon} onPress={() => console.log('press')} />
+                                <Icon name={`${prefix}logo-instagram`} size={40} style={styles.icon} onPress={() => console.log('press')} />
+                            </View>
                         </View>
-                        <View>
-                            <View style={{ flex: 1 }}>
-                                <Text style={styles.adresseText}>Show room</Text>
-                                <Text style={style.color}>3 Place de la République, 67350 PFAFFENHOFFEN</Text>
+
+                        <View style={[styles.box], { backgroundColor: "#3E3E3E" }}>
+                            <MapView
+                                style={{ height: 200, width: '100%', padding: 0 }}
+                                initialRegion={{ ...coordinate }}
+                            >
+                                <Marker coordinate={{ ...markerCoordinate }} />
+                            </MapView>
+                        </View>
+
+                        <View style={[styles.box, { backgroundColor: "#3E3E3ECC", marginTop: 15 }]}>
+                            <View style={{ flex: 1, marginBottom: 20 }}>
+                                <Text style={[styles.adresseText, { fontSize: 18 }]}>Adresse</Text>
                             </View>
                             <View style={{ flex: 1 }}>
-                                <Text style={styles.adresseText}>Siège social</Text>
-                                <Text style={style.color}>1a rue du moulin, 67330 obermodern</Text>
-                            </View>
-                            <View style={{ flex: 1, flexDirection: 'row' }}>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={styles.adresseText}>Téléphone</Text>
-                                    <Text style={style.color}>00.00.00.00.00</Text>
+                                    <Text style={styles.adresseText}>Show room</Text>
+                                    <Text style={styles.color}>3 Place de la République, 67350 PFAFFENHOFFEN</Text>
                                 </View>
                                 <View style={{ flex: 1 }}>
-                                    <Text style={styles.adresseText}>Adresse email</Text>
-                                    <Text style={style.color}>bscreation67@gmail.com</Text>
+                                    <Text style={styles.adresseText}>Siège social</Text>
+                                    <Text style={styles.color}>1a rue du moulin, 67330 obermodern</Text>
+                                </View>
+                                <View style={{ flex: 1, flexDirection: 'row' }}>
+                                    <View style={{ flex: 1 }}>
+                                        <Text style={styles.adresseText}>Téléphone</Text>
+                                        <Text style={styles.color}>00.00.00.00.00</Text>
+                                    </View>
+                                    <View style={{ flex: 1 }}>
+                                        <Text style={styles.adresseText}>Adresse email</Text>
+                                        <Text style={styles.color}>bscreation67@gmail.com</Text>
+                                    </View>
                                 </View>
                             </View>
                         </View>
-                    </View>
 
-                    <View>
-                        <TextInput
-                            style={styles.input}
-                            onChangeText={(text) => setName(text)}
-                            placeholder="Votre nom"
-                        /><TextInput
-                            style={styles.input}
-                            onChangeText={(text) => setName(text)}
-                            placeholder="Votre nom"
-                        />
-                    </View>
+                        <View style={{ flex: 1, backgroundColor: '#fff', paddingHorizontal: 20, paddingVertical: 30}}>
+                            <Text style={{textAlign: 'center', fontSize: 16, color: '#ff7400', fontWeight: 'bold', marginBottom: 15}}>Contactez nous en nous envoyant un mail</Text>
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={(text) => setName(text)}
+                                placeholder="Votre nom"
+                                textContentType="name"
+                                autoCompleteType="name"
+                                keyboardType="name-phone-pad"
+                            />
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={(text) => setName(text)}
+                                placeholder="Votre numéro de téléphone"
+                                textContentType="telephoneNumber"
+                                autoCompleteType="tel"
+                                keyboardType="phone-pad"
+                            />
+                            <TextInput
+                                style={styles.input}
+                                onChangeText={(text) => setName(text)}
+                                placeholder="Votre email"
+                                textContentType="emailAddress"
+                                autoCompleteType="email"
+                                keyboardType="email-address"
+                            />
+                            <TextInput
+                                style={[styles.input, { paddingBottom: 30 }]}
+                                onChangeText={(text) => setName(text)}
+                                placeholder="Votre message"
+                                multiline={true}
+                                editable={true}
+                            />
+                            <View style={{ justifyContent: "center", alignItems: "center", marginBottom: 15 }}>
+                                <TouchableOpacity activeOpacity={.9} onPress={() => alert("Form Submit!")} >
+                                    <View style={{ backgroundColor: "#3C3C3C", width: 120, height: 50, justifyContent: "center", alignItems: "center" }}>
+                                        <Text style={{ color: '#fff', padding: 15, fontSize: 18 }}>Envoyer</Text>
+                                    </View>
+                                </TouchableOpacity>
+                            </View>
+                        </View>
 
+                    </View>
                 </ScrollView>
             </View>
         </View>

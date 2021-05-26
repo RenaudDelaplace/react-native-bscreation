@@ -4,12 +4,11 @@ import Icon from 'react-native-vector-icons/FontAwesome5'
 import Context from './components/Context'
 
 const Header = ({ back, backText, navigation }) => {
-    const [press, setPress] = useContext(Context).press
     return (
         <View style={{ height: 100, width: '100%', backgroundColor: '#fff',justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row', elevation: 5 }}>
             {back ? 
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Icon name="arrow-left" size={30} style={{ color: '#ff7400', textAlignVertical: 'center' }} onPress={() => {navigation.goBack(null);setPress('Home') }} />
+                <Icon name="arrow-left" size={30} style={{ color: '#ff7400', textAlignVertical: 'center' }} onPress={() => {navigation.goBack(null); }} />
             </View> 
             : null}
 

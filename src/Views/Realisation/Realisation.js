@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { View, Animated, PanResponder, Dimensions, StyleSheet, FlatList } from 'react-native'
 
-import BottomNavigation from '../../components/Navigation/BottomNavigation'
 import Header from '../../components/Navigation/Header'
 import BoxItem from './components/BoxItem'
 
@@ -74,7 +73,6 @@ const Realisation = ({ navigation }) => {
 
     return (
         <View style={{ backgroundColor: '#3E3E3E', flex: 1 }}>
-            <BottomNavigation navigation={navigation} route="Realisation" />
             <Header back={true} backText='Nos réalisations' navigation={navigation} />
             <Animated.View {...panResponder.panHandlers} style={styles.slider}>
                 <FlatList 

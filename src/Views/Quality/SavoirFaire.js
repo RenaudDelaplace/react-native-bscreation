@@ -2,7 +2,6 @@ import React from 'react'
 import { View, FlatList } from 'react-native'
 import BoxInfos from '../../components/BoxInfos'
 
-import BottomNavigation from '../../components/Navigation/BottomNavigation'
 import Header from '../../components/Navigation/Header'
 
 const infos = [
@@ -29,7 +28,6 @@ const infos = [
 const SavoirFaire = ({ navigation }) => {
     return (
         <View style={{ backgroundColor: '#3E3E3E', flex: 1 }}>
-            <BottomNavigation navigation={navigation} route="Savoir" />
             <Header back={true} backText="Notre savoir faire" navigation={navigation} />
             <View style={{ height: '76%' }}>
                 <FlatList
