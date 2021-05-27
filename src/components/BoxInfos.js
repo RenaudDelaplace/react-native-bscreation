@@ -47,7 +47,7 @@ const BoxInfos = ({ item }) => {
     const first = item.id == 1 ? true : false
     
     return (
-        <View style={[styles.container, (first) ? { marginTop: 35 } : {}]}>
+        <View style={[styles.container, (first) ? { marginTop: 50 } : {}]}>
             <View style={styles.imageContainer}>
                 <Image source={item.src} style={styles.image} />
             </View>

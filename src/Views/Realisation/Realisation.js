@@ -67,12 +67,12 @@ const Realisation = ({ navigation }) => {
             width: page * windowWidth,
             flexDirection: 'row',
             transform: [{ translateX: translateState }],
-            left: (pageState) * -1 * windowWidth
+            left: (pageState) * -1 * windowWidth,
         },
     })
 
     return (
-        <View style={{ backgroundColor: '#3E3E3E', flex: 1 }}>
+        <View style={{ backgroundColor: '#3E3E3E', flex: 1}}>
             <Header back={true} backText='Nos réalisations' navigation={navigation} />
             <Animated.View {...panResponder.panHandlers} style={styles.slider}>
                 <FlatList 

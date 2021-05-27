@@ -45,20 +45,20 @@ const AnimatedNavigation = ({
                         useEffect(() => {
                             Animated.timing(animated, {
                                 toValue: 1,
-                                duration: 300,
-                                easing: EasingNode.ease
+                                duration: 200,
+                                easing: EasingNode.linear
                             }).start()
                         })
                     }
 
                     const scale = interpolateNode(animated, {
                         inputRange: [0, 1],
-                        outputRange: [1, 1.2],
+                        outputRange: [1, 1.1],
                         extrapolate: Extrapolate.CLAMP
                     })
                     const translateY = interpolateNode(animated, {
                         inputRange: [0, 1],
-                        outputRange: [0, -10],
+                        outputRange: [0, -5],
                         extrapolate: Extrapolate.CLAMP
                     })
 
@@ -82,6 +82,7 @@ const AnimatedNavigation = ({
                         >
                             <TouchableOpacity
                                 style={{borderColor: "#ff7400", backgroundColor: '#fff', width: 60, height: 60, borderRadius: 99 }}
+                                activeOpacity={.7}
                                 onPress={() => onPress()}
                             >
                                 <NavigationIcon {...{ iconName, isFocused }} />

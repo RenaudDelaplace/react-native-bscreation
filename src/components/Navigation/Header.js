@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { View, Image, Text } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import Context from './components/Context'
 
 const Header = ({ back, backText, navigation }) => {
     return (

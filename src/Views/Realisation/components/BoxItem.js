@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, Dimensions, Image, TouchableOpacity, FlatList } from 'react-native';
 
 import Icon from "react-native-vector-icons/Ionicons"
 
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     container: {
         width: windowWidth,
         justifyContent: "center",
-        height: '93%',
+        height: '95%',
     },
     boxHeader: {
         backgroundColor: '#fff',
@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 
 const BoxItem = (item) => {
     const navigationToDescription = () => {
-        navigate('Description', { title: item.title, author: item.author, date: item.date, image: item.img, desc: item.desc })
+        navigate('Description', { title: item.title, author: item.author, date: item.date, images: item.img, desc: item.desc })
     }
     return (
         <View style={styles.container}>
@@ -63,7 +63,7 @@ const BoxItem = (item) => {
                     {item.title}
                 </Text>
             </View>
-            <Image source={{uri: item.img}} style={styles.image} />
+            <Image source={{uri: item.img[0].src}} style={styles.image} />
             <View style={styles.descContainer}>
                 <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
                     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
