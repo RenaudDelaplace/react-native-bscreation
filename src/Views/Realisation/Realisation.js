@@ -49,7 +49,7 @@ const Realisation = ({ navigation }) => {
     let panResponder = PanResponder.create({
         onStartShouldSetPanResponder: (evt, gestureState) => false,
         onStartShouldSetPanResponderCapture: (evt, gestureState) => false,
-        onMoveShouldSetPanResponder: (ect, gestureState) => Math.abs(gestureState.dx) > 7,
+        onMoveShouldSetPanResponder: (sgestureState) => Math.abs(gestureState.dx) > 7,
         onMoveShouldSetPanResponderCapture: (evt, gestureState) => true,
         onPanResponderTerminationRequest: () => false,
         onPanResponderMove: (evt, gestureState) => {
@@ -58,7 +58,7 @@ const Realisation = ({ navigation }) => {
                 gestureState,
             );
         },
-        onPanResponderRelease: (evt, gestureState) => endGesture(evt, gestureState),
+        onPanResponderRelease: (evt, gestureState) => endGesture(gestureState),
         onPanResponderTerminate: (evt, gestureState) => { console.log('terminate') },
         onShouldBlockNativeResponder: (evt, gestureState) => true
     })
