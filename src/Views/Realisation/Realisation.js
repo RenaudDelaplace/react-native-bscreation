@@ -12,7 +12,7 @@ const Realisation = ({ navigation }) => {
     const [pageState, setPageState] = useState(0)
     const page = data.length
 
-    const endGesture = (evt, gestureState) => {
+    const endGesture = (gestureState) => {
         let toValue = 0
         if (Math.abs(gestureState.dx) / windowWidth > 0.2) {
             if (gestureState.dx < 0) {

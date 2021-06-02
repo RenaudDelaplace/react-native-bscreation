@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { ScrollView, View, Text, Platform, Dimensions, TextInput, StyleSheet, Button, TouchableOpacity, Linking } from 'react-native'
+import { ScrollView, View, Text, Platform, Dimensions, TextInput, StyleSheet, TouchableOpacity, Linking } from 'react-native'
 
 import Icon from 'react-native-vector-icons/Ionicons'
 import MapView, { Marker } from 'react-native-maps';
 
 import Header from "../../components/Navigation/Header"
-import { Send, Default } from "../../components/Mail/Email"
-
-const axios = require('axios')
+import { Default } from "../../components/Mail/Email"
 
 const styles = StyleSheet.create({
     color: {
@@ -91,7 +89,7 @@ const Contact = ({ navigation }) => {
                             </View>
                         </View>
 
-                        <View style={[styles.box], { backgroundColor: "#3E3E3E" }}>
+                        <View style={[styles.box, { backgroundColor: "#3E3E3E" }]}>
                             <MapView
                                 style={{ height: 200, width: '100%', padding: 0 }}
                                 initialRegion={{ ...coordinate }}
